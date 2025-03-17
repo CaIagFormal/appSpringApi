@@ -18,9 +18,11 @@ public class S_Request {
     List<M_ProdutoJson> mapApi;
 
     public List<M_Produto> requestApi(String iso,String server) throws JsonProcessingException {
-        System.out.println("Comunicando com '"+server + ":8080/API/" + iso+"'...");
+        String endereco = server + "/API/" + iso;
+
+        System.out.println("Comunicando com '"+endereco+"'...");
         mapApi = new ObjectMapper().readValue(
-                rest_template.getForObject(server + ":8080/API/" + iso,
+                rest_template.getForObject(endereco,
                         String.class), new TypeReference<List<M_ProdutoJson>>(){});
 
         List<M_Produto> m_apis = new ArrayList<>();

@@ -6,7 +6,7 @@ function getApi() {
 
     $.ajax({
     data:{data:data,endereco:endereco},
-    url:"/API",
+    url:"/faltando",
     method:"POST",
     success: function(valores) {
         $("#produtos").html(valores);

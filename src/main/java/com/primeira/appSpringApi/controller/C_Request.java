@@ -26,8 +26,8 @@ public class C_Request {
     }
 
 
-    @PostMapping("/API")
-    public String api(@RequestParam("data") String data,@RequestParam("endereco") String endereco, Model model) throws JsonProcessingException {
+    @PostMapping("/faltando")
+    public String faltando(@RequestParam("data") String data,@RequestParam("endereco") String endereco, Model model) throws JsonProcessingException {
         List<M_Produto> request =  s_request.requestApi(data,endereco);
         List<M_Produto> produtos = new ArrayList<>();
         for (M_Produto produto: request) {
