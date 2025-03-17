@@ -81,7 +81,7 @@ public class M_Produto {
                 "\"min\":"+this.min+"," +
                 "\"max\":"+this.max+"," +
                 "\"custo_medio\":"+this.custo_medio+"," +
-                "\"ultima_compra\":\""+this.ultima_compra.format(DateTimeFormatter.ISO_DATE)+"\"," +
+                "\"ultima_compra\":\""+this.ultima_compra.format(DateTimeFormatter.ISO_DATE)+"\"" +
                 "}";
     }
 }
