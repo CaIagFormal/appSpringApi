@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Consultor de Produto de Hotel</title>
@@ -12,6 +13,7 @@
             crossorigin="anonymous"></script>
     <!--CUSTOMS-->
     <script src="/js/index.js" defer></script>
+    <script src="/js/consultor.js" defer></script>
     <link href="/css/index.css" rel="stylesheet">
 </head>
 <body>
@@ -19,9 +21,11 @@
         <h3 class="text-center">Consultor de Produto de Hotel</h3>
 
         <div class="row mt-5 container">
+            <h4 class="col-12">Consultor de produtos em quantidade insuficiente <a href="/comprador" class="btn btn-secondary">Comprador</a></h4>
+
             <div class="input-group mb-3 col">
                 <label class="input-group-text" for="data">Data</label>
-                <input type="date" class="form-control" placeholder="Data" id="data">
+                <input type="date" class="form-control data-atual" placeholder="Data" id="data">
             </div>
 
             <div class="input-group mb-3 col">
@@ -30,15 +34,12 @@
             </div>
 
             <div class="col-6 text-end">
-                <button type="button" class="btn btn-primary" id="enviar">Enviar</button>
+                <button type="button" class="btn btn-primary" id="api-consultor-unico">Inspecionar</button>
+                <button type="button" class="btn btn-primary" id="api-consultor-todos">Todos</button>
             </div>
         </div>
 
-        <datalist id="ips">
-            <option value="http://localhost:8080">Ram Gratis</option> <!-- carlos -->
-            <option value="http://10.135.20.15:8080">Pietro</option>    <!-- pietro -->
-            <option value="http://10.135.20.43:8080">Golden Park</option> <!-- gabriel -->
-        </datalist>
+        <datalist id="ips"  th:replace="pv/ips"></datalist>
 
         <div id="produtos"></div>
     </div>

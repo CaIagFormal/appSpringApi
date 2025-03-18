@@ -25,6 +25,20 @@ public class C_Request {
         this.s_request = s_request;
     }
 
+    @GetMapping("/")
+    public String getIndex() {
+        return "redirect:/consultor";
+    }
+
+    @GetMapping("/consultor")
+    public String getConsultor() {
+        return "consultor";
+    }
+
+    @GetMapping("/comprador")
+    public String getComprador() {
+        return "comprador";
+    }
 
     @PostMapping("/faltando")
     public String faltando(@RequestParam("data") String data,@RequestParam("endereco") String endereco, Model model) throws JsonProcessingException {

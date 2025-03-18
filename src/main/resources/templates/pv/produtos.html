@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <div th:each="produto:${produtos}" class="container row mt-3 bordas">
@@ -8,3 +9,4 @@
         <p class="col-4 m-0"><b>Custo Médio: </b>R$<span th:text="${#numbers.formatDecimal(produto.custo_medio, 0, 'COMMA', 2, 'POINT')}"></span></p>
         <p class="col-4 m-0"><b>Última Compra: </b><span th:text="${produto.ultima_compra}"></span></p>
 </div>
+<b th:if="${#lists.size(produtos)==0}">Não há produtos faltando!</b>
