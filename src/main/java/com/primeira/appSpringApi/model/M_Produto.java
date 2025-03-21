@@ -7,16 +7,21 @@ public class M_Produto {
 
     public M_Produto(M_ProdutoJson json) {
         this.produto = json.getProduto();
-        this.quantidade = Integer.valueOf(json.getQuantidade());
+        this.quantidade = Long.valueOf(json.getQuantidade());
         this.min = Integer.valueOf(json.getMin());
         this.max = Integer.valueOf(json.getMax());
         this.custo_medio = Double.valueOf(json.getCusto_medio());
-        this.ultima_compra = LocalDate.parse(json.getUltima_compra(), DateTimeFormatter.ISO_DATE);
+        try {
+            this.ultima_compra = LocalDate.parse(json.getUltima_compra(), DateTimeFormatter.ISO_DATE);
+        } catch (Exception e) {
+            this.ultima_compra = null;
+        }
+
     }
 
     private String produto;
 
-    private Integer quantidade;
+    private Long quantidade;
 
     private Integer min;
 
@@ -34,11 +39,11 @@ public class M_Produto {
         this.produto = produto;
     }
 
-    public Integer getQuantidade() {
+    public Long getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(Integer quantidade) {
+    public void setQuantidade(Long quantidade) {
         this.quantidade = quantidade;
     }
 

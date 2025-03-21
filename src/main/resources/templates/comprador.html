@@ -44,11 +44,18 @@
 
             <h4 class="col-12 mt-3"> Filiais</h4>
             <div class="bordas container p-3">
-                <div class="bordas template-filial p-2 mb-3 row d-none">
+                <div class="bordas template-filial pt-3 ms-1 mb-3 row d-none container">
                     <h4 class="col-2">Filial</h4>
                     <div class="input-group mb-3 col">
                         <label class="input-group-text">Qtd.</label>
-                        <input type="number" min="1" class="form-control" placeholder="Quantidade">
+                        <input type="number" min="1" value="1" class="form-control qtd" placeholder="Quantidade">
+                    </div>
+                    <div class="input-group mb-3 col">
+                        <label class="input-group-text">Data</label>
+                        <input type="date" class="form-control data-atual data-max-atual data" placeholder="Data de redistribuição">
+                    </div>
+                    <div class="col-1 mb-3 p-0">
+                    <button class="btn btn-danger remover">X</button>
                     </div>
                 </div>
 
@@ -60,10 +67,15 @@
                         <input type="text" list="ips" class="form-control" placeholder="Endereço" id="endereco">
                     </div>
 
-                    <div class="col">
+                    <div class="col p-0">
                     <button type="button" class="btn btn-primary" id="add-filial">Adicionar</button>
                     </div>
+
+                    <div class="col text-end">
+                        <button type="button" class="btn btn-primary" id="enviar">Enviar</button>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

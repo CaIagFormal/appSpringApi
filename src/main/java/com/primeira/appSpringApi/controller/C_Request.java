@@ -8,10 +8,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,5 +49,13 @@ public class C_Request {
         }
         model.addAttribute("produtos",produtos);
         return "pv/produtos";
+    }
+
+    @PostMapping("/enviarproduto")
+    @ResponseBody
+    public String enviarProduto(@RequestParam("dados") String dados) throws JsonProcessingException {
+        s_request.produtoApi(dados);
+
+        return "PLACEHOLDER";
     }
 }
